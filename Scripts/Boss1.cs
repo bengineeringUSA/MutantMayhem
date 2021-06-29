@@ -35,7 +35,7 @@ public class Boss1 : IEnemy
 	{
 		game = (Generic2dGame)GetNode("/root/Generic2dGame");
 		
-		playerPosition = new Vector2(game.ScreenWidth / 2, game.ScreenHeight / 2);
+		playerPosition = new Vector2(Generic2dGame.ScreenWidth / 2, Generic2dGame.ScreenHeight / 2);
 		
 		this.Position = new Vector2(Generic2dGame.ScreenWidth / 2, -80);
 
