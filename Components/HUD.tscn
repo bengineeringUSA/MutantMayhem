@@ -1,0 +1,102 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/HUD.cs" type="Script" id=1]
+[ext_resource path="res://Assets/Misc/HUD/MoneyBag.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/Crayawn-v58y.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Misc/HUD/PauseButton.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Misc/HUD/ProgressBarBorder.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Misc/HUD/ProgressBarProgress.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Misc/HUD/PauseButtonPressed.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Audio/Sfx/sfx_sounds_button11.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Misc/HUD/bosshealthbar.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Misc/HUD/mutantfrogtext.png" type="Texture" id=10]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 32.0
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_size = 1
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="HUD" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="MoneyBag" type="Sprite" parent="."]
+position = Vector2( 1200, 56 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="MoneyBag"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoneyBag/Area2D"]
+shape = SubResource( 1 )
+
+[node name="MoneyText" type="RichTextLabel" parent="."]
+margin_left = 848.0
+margin_top = 40.0
+margin_right = 1144.0
+margin_bottom = 96.0
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[right]0[/right]"
+text = "0"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackPolygon" type="Polygon2D" parent="."]
+visible = false
+z_index = 4
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 1280, 0, 1280, 720, 0, 720 )
+
+[node name="PauseButton" type="TextureButton" parent="."]
+margin_left = 40.0
+margin_top = 608.0
+margin_right = 115.0
+margin_bottom = 683.0
+toggle_mode = true
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBarBorder" type="Sprite" parent="."]
+position = Vector2( 1136, 656 )
+z_index = 3
+texture = ExtResource( 5 )
+
+[node name="ProgressBarProgress" type="Sprite" parent="."]
+position = Vector2( 1025, 629 )
+scale = Vector2( 1e-05, 1 )
+z_index = 2
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ButtonSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 640, 336 )
+stream = ExtResource( 8 )
+
+[node name="BossHealth" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1018, 626.5 )
+scale = Vector2( 1, 0.694117 )
+z_index = -1
+texture = ExtResource( 9 )
+centered = false
+
+[node name="BossName" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1130, 605 )
+texture = ExtResource( 10 )
+
+[connection signal="area_entered" from="MoneyBag/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="button_down" from="PauseButton" to="." method="_on_TextureButton_button_down"]

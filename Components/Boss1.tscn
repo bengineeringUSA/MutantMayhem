@@ -1,0 +1,49 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Enemies/Boss1_1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Enemies/Boss1_3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Enemies/Boss1_4.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Enemies/Boss1_2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Enemies/Boss1_5.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Audio/Sfx/sfx_damage_hit6.wav" type="AudioStream" id=6]
+[ext_resource path="res://Scripts/Boss1.cs" type="Script" id=7]
+[ext_resource path="res://Assets/Enemies/Boss2_1.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "attacking2",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "attacking",
+"speed": 7.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 106.667
+
+[node name="Boss1" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+shape = SubResource( 2 )
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]

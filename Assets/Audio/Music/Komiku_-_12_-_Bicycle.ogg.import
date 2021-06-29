@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Komiku_-_12_-_Bicycle.ogg-ada8b721fed641636a15e795e06c4fec.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Komiku_-_12_-_Bicycle.ogg"
+dest_files=[ "res://.import/Komiku_-_12_-_Bicycle.ogg-ada8b721fed641636a15e795e06c4fec.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

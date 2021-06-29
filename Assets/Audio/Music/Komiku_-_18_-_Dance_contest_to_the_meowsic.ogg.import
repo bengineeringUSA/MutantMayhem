@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Komiku_-_18_-_Dance_contest_to_the_meowsic.ogg-daa5cb837c03a0b26c9c9187f6705954.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Komiku_-_18_-_Dance_contest_to_the_meowsic.ogg"
+dest_files=[ "res://.import/Komiku_-_18_-_Dance_contest_to_the_meowsic.ogg-daa5cb837c03a0b26c9c9187f6705954.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

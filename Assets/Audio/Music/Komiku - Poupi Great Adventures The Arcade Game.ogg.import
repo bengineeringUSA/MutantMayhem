@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Komiku - Poupi Great Adventures The Arcade Game.ogg-725f657e8de474848358fa705a338157.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Komiku - Poupi Great Adventures The Arcade Game.ogg"
+dest_files=[ "res://.import/Komiku - Poupi Great Adventures The Arcade Game.ogg-725f657e8de474848358fa705a338157.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

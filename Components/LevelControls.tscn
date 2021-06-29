@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/LevelControls.cs" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 320, 360 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 320, 360 )
+
+[node name="LevelControls" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="LeftButton" type="TouchScreenButton" parent="."]
+shape = SubResource( 1 )
+visibility_mode = 1
+
+[node name="RightButton" type="TouchScreenButton" parent="."]
+position = Vector2( 640, 0 )
+shape = SubResource( 2 )
+visibility_mode = 1
+
+[connection signal="pressed" from="LeftButton" to="." method="_on_LeftButton_pressed"]
+[connection signal="released" from="LeftButton" to="." method="_on_LeftButton_released"]
+[connection signal="pressed" from="RightButton" to="." method="_on_RightButton_pressed"]
+[connection signal="released" from="RightButton" to="." method="_on_RightButton_released"]

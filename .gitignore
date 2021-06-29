@@ -1,0 +1,29 @@
+
+# Godot-specific ignores
+.import/
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# System/tool-specific ignores
+.directory
+*~
+
+# Plugin specific ignores
+screenshots/
+
+# Binary ignores
+/bin
+obj
+
+# IDE ignores
+.vscode/
+.vs/
+
+# Contains Secrets
+export_presets.cfg

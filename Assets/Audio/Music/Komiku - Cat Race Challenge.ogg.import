@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Komiku - Cat Race Challenge.ogg-ddf9178c0b1a80d357dca48ea9ebda8e.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Komiku - Cat Race Challenge.ogg"
+dest_files=[ "res://.import/Komiku - Cat Race Challenge.ogg-ddf9178c0b1a80d357dca48ea9ebda8e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

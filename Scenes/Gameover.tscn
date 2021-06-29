@@ -1,0 +1,144 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scripts/Gameover.cs" type="Script" id=1]
+[ext_resource path="res://Assets/Audio/Sfx/sfx_sounds_button11.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Audio/Music/Komiku_-_20_-_SUPER_POUPI.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Misc/HUD/RestartButton.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Misc/HUD/RestartButton_Pressed.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Cutscenes/Intro/TextBackground.jpg" type="Texture" id=6]
+[ext_resource path="res://Assets/Cutscenes/Credits/CreditsText.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Cutscenes/Credits/CodeText.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Cutscenes/Credits/MusicText.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Cutscenes/Credits/StoryText.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Cutscenes/Credits/ArtText.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Cutscenes/Credits/DesignText.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Cutscenes/Credits/TestersText.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Cutscenes/Credits/ThanksText.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Cutscenes/Credits/TBCText.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Audio/Music/Komiku - Poupi Great Adventures The Arcade Game.ogg" type="AudioStream" id=16]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/Fonts/Crayawn-v58y.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 90
+outline_size = 1
+outline_color = Color( 0.309804, 0.305882, 1, 1 )
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Assets/Fonts/Crayawn-v58y.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+outline_size = 1
+outline_color = Color( 0.309804, 0.305882, 1, 1 )
+font_data = SubResource( 3 )
+
+[node name="Gameover" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="WinMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="LoseMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="Credits" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite" parent="Credits"]
+position = Vector2( 640, 360 )
+texture = ExtResource( 6 )
+
+[node name="CreditsTextNode" type="Node2D" parent="Credits"]
+
+[node name="StoryText" type="Sprite" parent="Credits/CreditsTextNode"]
+position = Vector2( 527.5, 1155 )
+texture = ExtResource( 10 )
+
+[node name="ArtText" type="Sprite" parent="Credits/CreditsTextNode"]
+position = Vector2( 495.5, 1395 )
+texture = ExtResource( 11 )
+
+[node name="MusicText" type="Sprite" parent="Credits/CreditsTextNode"]
+position = Vector2( 488, 1592 )
+texture = ExtResource( 9 )
+
+[node name="CreditsText" type="Sprite" parent="Credits/CreditsTextNode"]
+position = Vector2( 664, 888 )
+texture = ExtResource( 7 )
+
+[node name="CodeText" type="Sprite" parent="Credits/CreditsTextNode"]
+position = Vector2( 464, 2032 )
+texture = ExtResource( 8 )
+
+[node name="DesignText" type="Sprite" parent="Credits/CreditsTextNode"]
+position = Vector2( 480, 1832 )
+texture = ExtResource( 12 )
+
+[node name="TestersText" type="Sprite" parent="Credits/CreditsTextNode"]
+position = Vector2( 743, 2264 )
+texture = ExtResource( 13 )
+
+[node name="ThanksText" type="Sprite" parent="Credits/CreditsTextNode"]
+position = Vector2( 560, 2496 )
+texture = ExtResource( 14 )
+
+[node name="TBCText" type="Sprite" parent="Credits/CreditsTextNode"]
+position = Vector2( 672, 3080 )
+texture = ExtResource( 15 )
+
+[node name="HighScore" type="Node2D" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="HighScore"]
+margin_left = 1032.0
+margin_top = 568.0
+margin_right = 1261.0
+margin_bottom = 698.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverText" type="RichTextLabel" parent="HighScore"]
+margin_left = 472.0
+margin_top = 170.0
+margin_right = 920.0
+margin_bottom = 274.0
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0.933333, 0.270588, 0.270588, 1 )
+text = "Game Over"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreText" type="RichTextLabel" parent="HighScore"]
+margin_left = 486.0
+margin_top = 362.0
+margin_right = 990.0
+margin_bottom = 458.0
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighScoreText" type="RichTextLabel" parent="HighScore"]
+margin_left = 486.0
+margin_top = 451.0
+margin_right = 990.0
+margin_bottom = 547.0
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="finished" from="ButtonSound" to="." method="_on_ButtonSound_finished"]
+[connection signal="pressed" from="HighScore/TextureButton" to="." method="_on_TextureButton_pressed"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Coin.cs" type="Script" id=2]
+[ext_resource path="res://Assets/Audio/Sfx/sfx_coin_double3.wav" type="AudioStream" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 24.0
+
+[node name="Coin" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+shape = SubResource( 1 )
+[connection signal="finished" from="CoinSound" to="." method="_on_CoinSound_finished"]
+[connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_Area2D_area_entered"]
