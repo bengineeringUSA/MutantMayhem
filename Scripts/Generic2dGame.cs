@@ -145,12 +145,12 @@ public class Generic2dGame : Node
 				EnemySpawnRate = 3;
 				PlayerMaxRotationSpeed = 2.0f;
 				
-				Level1Duration = 60.0f;
+				Level1Duration = 70.0f;
 				Level1EnemyAddSpeed = 3;
 				
 				Boss1Health = 7;
 				Boss1ShootStartingTimer = 4.0f;
-				Boss1ShootMinimumTime = 2.0f;
+				Boss1ShootMinimumTime = 1.0f;
 				Boss1ProjectileSpeed = 0.20f;
 				Boss1MoveSpeed = 35.0f;
 				Boss1ShrinkSpeed = 4.0f;
